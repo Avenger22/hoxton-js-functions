@@ -73,15 +73,12 @@ function yearsToAdulthood(numberParameter) {
 //   - if they are, greet them
 //   - if they are not, tell them to come back in X years (when they are)
 // Output: The result (string)
-function admit(personParameter = {
-    ageParameter: null, 
-    nameParameter: null
-}) {
+function admit(personParameter) {
 
     alert("Here we check everything")
-    let insideGreet = greet(personParameter.nameParameter)
-    let insideAdult = isAnAdult(personParameter.ageParameter)
-    let insideAdultHood = yearsToAdulthood(personParameter.ageParameter)
+    let insideGreet = greet(personParameter.name)
+    let insideAdult = isAnAdult(personParameter.age)
+    let insideAdultHood = yearsToAdulthood(personParameter.age)
 
     if (insideAdult) {
         alert(`Hi : ${insideGreet}`)
@@ -101,6 +98,7 @@ let person = {
     age: ageOfPerson,
     name: nameOfPerson
 }
+
 console.log(`Object value age: ${person.age} and name: ${person.name}`)
 
 let fuctionSum = add(numberOfPerson, 10)
@@ -114,7 +112,4 @@ console.log(`Hi ${functionGreet} you are Adult: ${functionIsAdult} \n
 and if you are not then you are : ${functionAdultHood} years from becoming one adult \n, 
 \n The number you entered : ${numberOfPerson}`)
 
-admit(person = {
-    age: ageOfPerson,
-    name: nameOfPerson
-})
+admit(person)
